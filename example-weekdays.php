@@ -20,12 +20,14 @@ echo texttable::table( $data, $headertype = 'firstrow' );
 
 
 // Display header from keys instead.  ( default behavior )
-$data[0] = ['weekday' => 'Weekday', 'abbrev' => 'Abbrev', 'initial' => 'Initial', 'position' => 'Position'];
+$footer = array_shift( $data );  // remove first and second row.
+array_shift( $data );
+array_unshift( $data, ['weekday' => 'Sunday', 'abbrev' => 'Sun', 'initial' => 'S', 'position' => 0] );
 echo "\n\n  [ Example 2.  Table with header generated from array keys ]\n";
 echo texttable::table( $data );
 
 // Add a footer row, same as header, but displaying values instead of keys.
-$data[] = $data[0];
+$data[] = $footer;
 echo "\n\n  [ Example 3.  Table with header (array keys) and footer ( array vals ) ]\n";
 echo texttable::table( $data, $headertype = 'keys', $footertype = 'lastrow' );
 
