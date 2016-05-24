@@ -4,7 +4,7 @@ A handy PHP class for printing fixed-width text tables.
 
 Let's see a couple examples, shall we?
 
-# Example Price History Report ( from bitprices(https://github.com/dan-da/bitprices) )
+## Example Price History Report ( from bitprices(https://github.com/dan-da/bitprices) )
 
 ```
 +------------+------------------+-----------+-------------+----------------+---------------+----------+
@@ -24,7 +24,7 @@ Let's see a couple examples, shall we?
 +------------+------------------+-----------+-------------+----------------+---------------+----------+
 ```
 
-# Days of the week.  From ./example-weekdays2.php
+## Days of the week.  From ./example-weekdays2.php
 
 ```
 +-----------+--------+---------+----------+
