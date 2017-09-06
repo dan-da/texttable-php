@@ -43,11 +43,28 @@ Let's see a couple examples, shall we?
 
 # Usage.
 
+## You can install with composer.
+
+```
+    $ cd yourproject
+    $ composer require dan-da/strictmode-php
+```
+
+include in your code via:
+
+```
+require_once 'path/to/vendor/autoload.php';
+```
+
+
+## Or just drop into your project.
+
 There are no dependencies!
 
 Simply include texttable.class.php from any PHP file and use it!
 
 Here's a trivial example that prints info about the days of the week:
+
 
 ```
 <?php
