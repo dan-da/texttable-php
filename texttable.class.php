@@ -1,5 +1,12 @@
 <?php
 
+// be safe and sane.  use strictmode if available via composer.
+$autoload_file = __DIR__ . '/vendor/autoload.php';
+if( file_exists( $autoload_file )) {
+    require_once($autoload_file);
+    \strictmode\initializer::init();
+}
+
 /***
  * A class to print text in formatted tables.
  */
@@ -18,7 +25,7 @@ class texttable {
         if( !@count( $rows ) ) {
             
             if( $empty_row_string !== null ) {
-                $rows = [ [ $this->empty_row_string ] ];
+                $rows = [ [ $empty_row_string ] ];
             }
             else {
                 return '';
