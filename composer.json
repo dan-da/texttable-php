@@ -4,6 +4,7 @@
     "autoload": {
         "classmap": [
             "texttable.class.php"
+            "texttable_markdown.class.php"
         ]
     },
 
