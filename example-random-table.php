@@ -24,7 +24,7 @@ for( $i = 0; $i < 20; $i ++ ) {
 $headertypes = [ 'keys', 'firstrow', 'none'];
 $headertype = $headertypes[rand(0, count( $headertypes) - 1)];
 
-$footertypes = [ 'keys', 'firstrow', 'none'];
+$footertypes = [ 'keys', 'lastrow', 'none'];
 $footertype = $footertypes[rand(0, count( $footertypes) - 1)];
 
 echo texttable::table( $data, $headertype, $footertype );
