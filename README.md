@@ -2,6 +2,8 @@
 
 A handy PHP class for printing fixed-width text tables.
 
+There is also a class for printing human-friendly markdown tables.
+
 Let's see a couple examples, shall we?
 
 ## Example Price History Report ( from [bitprices](https://github.com/dan-da/bitprices) )
@@ -47,7 +49,7 @@ Let's see a couple examples, shall we?
 
 ```
     $ cd yourproject
-    $ composer require dan-da/strictmode-php
+    $ composer require dan-da/texttable-php
 ```
 
 include in your code via:
