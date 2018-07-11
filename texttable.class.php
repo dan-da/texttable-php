@@ -60,10 +60,10 @@ class texttable {
         }
         
         $buf = '';
+        $buf .= static::print_divider_row( $col_widths, 'top' );
         if( $header ) {        
             $buf .= static::print_header($col_widths, $header );
         }
-        $buf .= static::print_divider_row( $col_widths, 'top' );
         foreach( $rows as $row ) {
             $row = static::obj_arr( $row );
             $buf .= static::print_row( $col_widths, $row );
