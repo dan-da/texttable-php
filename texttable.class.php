@@ -102,7 +102,7 @@ class texttable {
         $idx = 0;
         foreach( $row as $val ) {
             $pad_type = is_numeric( $val ) ? STR_PAD_LEFT : STR_PAD_RIGHT;
-            $buf .= ' ' . str_pad( $val, $col_widths[$idx], ' ', $pad_type ) . " |";
+            $buf .= ' ' . self::mb_str_pad_to_width( $val, $col_widths[$idx], ' ', $pad_type ) . " |";
             $idx ++;
         }
         return $buf . "\n";
@@ -111,7 +111,8 @@ class texttable {
     static protected function calc_row_col_widths( &$col_widths, $row ) {
         $idx = 0;
         foreach( $row as $val ) {
-            $len = strlen( $val );
+            $len = mb_strwidth( $val );
+
             if( $len > @$col_widths[$idx] ) {
                 $col_widths[$idx] = $len;
             }
@@ -122,4 +123,13 @@ class texttable {
     static protected function obj_arr( $t ) {
        return is_object( $t ) ? get_object_vars( $t ) : $t;
     }
+
+    /* Pads a string to a given width, where width is measured as per
+     * mb_strwidth, ie regular chars count as 1, and double-wide chars count as 2.
+     */
+    static protected function mb_str_pad_to_width($input, $pad_length, $pad_string=' ', $pad_type=STR_PAD_RIGHT,$encoding='UTF-8'){
+        $mb_diff=mb_strlen($input, $encoding)-strlen($input);
+        $padded = str_pad($input,$pad_length-$mb_diff,$pad_string,$pad_type);
+        return mb_strimwidth($padded, 0, $pad_length);
+    } 
 }
